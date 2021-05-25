@@ -33,7 +33,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (provider && address) {
+    if (address) {
       const fetchTokens = async (address: string) => {
         const response = await getListOfTokensOwnedByAddress(address);
         if (response) {
@@ -43,7 +43,7 @@ const Home = () => {
       };
       fetchTokens(address);
     }
-  }, [address, provider]);
+  }, [address]);
 
   const handleTestCallContract = async () => {
     const signer = provider?.getSigner();
