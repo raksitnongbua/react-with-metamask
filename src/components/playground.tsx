@@ -9,7 +9,7 @@ declare global {
   }
 }
 type Provider = ethers.providers.Web3Provider;
-const Home = () => {
+const PlayGround = () => {
   const [metamaskEnabled, setMetamaskEnabled] = useState(false);
   const [provider, setProvider] = useState<Provider>();
   const [balance, setBalance] = useState('0.0');
@@ -91,4 +91,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PlayGround;
