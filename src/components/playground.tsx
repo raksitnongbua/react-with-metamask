@@ -34,15 +34,14 @@ const Home = () => {
 
   useEffect(() => {
     if (provider && address) {
-      setTokens([]);
-      const getToken = async (address: string) => {
+      const fetchTokens = async (address: string) => {
         const response = await getListOfTokensOwnedByAddress(address);
         if (response) {
           const tokens: IToken[] = response;
           setTokens(tokens);
         }
       };
-      getToken(address);
+      fetchTokens(address);
     }
   }, [address, provider]);
 
